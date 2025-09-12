@@ -7,7 +7,7 @@ Official n8n node for [VerificarEmails.com](https://www.verificaremails.com). Va
 1. In n8n, go to **Settings → Community nodes → Install a community node**.
 2. Enter the package name:
    ```
-   @verificaremails/email-validation-node
+   @verificaremails/n8n-nodes-verificaremails
    ```
 3. Accept the security warning and confirm.
 

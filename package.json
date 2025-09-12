@@ -1,5 +1,5 @@
 {
-  "name": "@verificaremails/email-validation-node",
+  "name": "@verificaremails/n8n-nodes-verificaremails",
   "version": "1.0.1",
   "description": "VerificarEmails.com node for n8n (email, phone, name and address validation)",
   "author": {
@@ -8,13 +8,13 @@
     "url": "https://www.verificaremails.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/apousb/Verificaremails_n8n_email",
+  "homepage": "https://github.com/apousb/verificaremails-n8n-community-node",
   "repository": {
     "type": "git",
-    "url": "https://github.com/apousb/Verificaremails_n8n_email.git"
+    "url": "https://github.com/apousb/verificaremails-n8n-community-node.git"
   },
   "bugs": {
-    "url": "https://github.com/apousb/Verificaremails_n8n_email/issues"
+    "url": "https://github.com/apousb/verificaremails-n8n-community-node/issues"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -21,7 +21,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "tsc -p tsconfig.json",
-    "postbuild": "mkdir -p dist/nodes/Verificaremails && (cp -f assets/verificaremails2.svg dist/nodes/Verificaremails/verificaremails2.svg || cp -f verificaremails2.svg dist/nodes/Verificaremails/verificaremails2.svg || true) && (cp -f assets/verificaremails2.svg dist/verificaremails2.svg || cp -f verificaremails2.svg dist/verificaremails2.svg || true)",
+    "postbuild": "mkdir -p dist/nodes/Verificaremails && (cp -f assets/verificaremails2.svg dist/nodes/Verificaremails/verificaremails2.svg ||  cp -f verificaremails2.svg dist/nodes/Verificaremails/verificaremails2.svg || true) && (cp -f assets/verificaremails2.svg dist/verificaremails2.svg ||  cp -f verificaremails2.svg dist/verificaremails2.svg || true)",
     "prepare": "npm run build"
   },
   "keywords": [

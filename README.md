@@ -37,7 +37,7 @@ npm run build
 
 The icon must be available at build time at:
 ```
-dist/nodes/Verificaremails/verificaremails.svg
+dist/nodes/Verificaremails/verificaremails2.svg
 ```
 
 ## License

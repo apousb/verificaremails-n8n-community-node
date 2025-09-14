@@ -6,9 +6,15 @@
     "outDir": "dist",
     "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "rootDir": "."
   },
   "include": [
-    "**/*.ts"
+    "**/*.ts",
+    "src/index.ts",
+    "Verificaremails.node.ts",
+    "GenericFunctions.ts",
+    "credentials/**/*.ts",
+    "nodes/**/*.ts"
   ]
 }

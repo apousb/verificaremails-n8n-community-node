@@ -11,10 +11,6 @@ Official n8n node for [VerificarEmails.com](https://www.verificaremails.com). Va
    ```
 3. Accept the security warning and confirm.
 
-## Credentials
-
-Create a credential **VerificarEmails API** and enter your API key.
-
 ## Services Supported
 
 - Email validation
@@ -39,6 +35,26 @@ The icon must be available at build time at:
 ```
 dist/nodes/Verificaremails/verificaremails2.svg
 ```
+
+## Credentials
+
+In order to use VerificarEmail API, you have to register into the platform and enable each service you would like to use. remmeber that we have verification services for:
+Email verification, phone verification, postal address verification and name/surname and gender detection.
+
+In order to start open an account a https://dashboard.verificaremails.com select your desired language, all messages of the API will use your account language.
+
+[![Dashboard Verificaremails]([https://www.verificaremails.com/img/verificaremails.svg]([https://www.verificaremails.com/docs/assets/Dashboard_paso_1.png))](https://github.com/apousb/verificaremails-n8n-community-node](https://dashboard.verificaremails.com/app/public/register))
+
+
+
+You can find detailed information about our API and how to understand resulta at:
+Email Verification API: https://www.verificaremails.com/docs/en/
+Phone Veriffication API: https://www.verificaremails.com/docs/en/index_telefonos.html
+Name/Surname and Gender API: https://www.verificaremails.com/docs/en/index_nombres.html
+Postal Address API: https://www.verificaremails.com/docs/en/index_direcciones.html
+If you want a quick stating guide go to our Swagger file: https://dashboard.verificaremails.com/documentation/index.html?v=8
+
+
 
 ## License
 

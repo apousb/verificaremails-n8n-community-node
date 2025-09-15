@@ -1,3 +1,4 @@
+import { NodeApiError } from 'n8n-workflow';
 export type VerificarService =
   | 'email'
   | 'phone_hlr'
@@ -35,10 +36,13 @@ export async function verificaremailsApiRequest(
   };
 
   try {
-    // @ts-ignore - n8n provides helpers at runtime
-    const response = await this.helpers.request(options);
-    return response;
-  } catch (error: any) {
-    throw new Error(`Verificaremails API request failed: ${error?.message || error}`);
+  // @ts-ignore - n8n provides helpers at runtime
+  const response = await this.helpers.request(options);
+  return response;
+} catch (error: any) {
+  // Standardized error surface for n8n UI
+  throw new NodeApiError(this.getNode(), error, { message: 'Verificaremails API request failed' });
+}
+`);
   }
 }

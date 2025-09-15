@@ -43,7 +43,7 @@ Email verification, phone verification, postal address verification and name/sur
 
 In order to start open an account a https://dashboard.verificaremails.com select your desired language, all messages of the API will use your account language.
 
-[![Dashboard Verificaremails]([https://www.verificaremails.com/img/verificaremails.svg]([https://www.verificaremails.com/docs/assets/Dashboard_paso_1.png))](https://github.com/apousb/verificaremails-n8n-community-node](https://dashboard.verificaremails.com/app/public/register))
+[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/Dashboard_paso_1.png)(https://github.com/apousb/verificaremails-n8n-community-node](https://dashboard.verificaremails.com/app/public/register)
 
 
 

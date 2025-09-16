@@ -1,28 +1,35 @@
 # VerificarEmails — n8n Community Node
 
-Official n8n node for [VerificarEmails.com](https://www.verificaremails.com). Validate **emails**, **phone numbers** (HLR/MNP/Syntactic), **names**, and **postal addresses**.
+Official n8n node for [VerificarEmails.com](https://www.verificaremails.com).  
+Validate **emails**, **phone numbers** (HLR / MNP / Syntax), **names**, and **postal addresses**.
 
-## Install (Community Nodes)
+---
 
-1. In n8n, go to **Settings → Community nodes → Install a community node**.
+## Installation (Community Nodes)
+
+1. In n8n, go to **Settings → Community nodes → Install a community node**.  
 2. Enter the package name:
-   ```
+   ```bash
    @verificaremails/n8n-nodes-verificaremails
    ```
 3. Accept the security warning and confirm.
 
-## Services Supported
+---
 
-- Email validation
-- Phone validation — HLR Lookup
-- Phone validation — MNP
-- Phone validation — Syntactic
-- Postal Address validation
-- Name/Surname/Gender validation
-- Name/Surname correction (JSON term)
-- Name/Surname autocomplete (JSON term)
+## Supported Services
 
-> For *Name correction* and *Name autocomplete*, the node builds the required JSON and encodes it into the `term` parameter automatically.
+- Email validation  
+- Phone validation — HLR Lookup  
+- Phone validation — MNP  
+- Phone validation — Syntax  
+- Postal address validation  
+- Name / Surname / Gender validation  
+- Name / Surname correction (JSON term)  
+- Name / Surname autocomplete (JSON term)  
+
+> For *Name correction* and *Name autocomplete*, the node automatically builds the required JSON and encodes it into the `term` parameter.
+
+---
 
 ## Development
 
@@ -31,66 +38,77 @@ npm install
 npm run build
 ```
 
-The icon must be available at build time at:
+The icon must be available at build time in:
 ```
 dist/nodes/Verificaremails/verificaremails2.svg
 ```
 
+---
+
 ## Credentials
 
-In order to use VerificarEmail API, you have to register into the platform and enable each service you would like to use. remmeber that we have verification services for:
-Email verification, phone verification, postal address verification and name/surname and gender detection.
+To use the VerificarEmails API, you must first [create an account](https://dashboard.verificaremails.com/app/public/register).  
+Once registered, you can activate the services you need:  
+- Email verification  
+- Phone verification  
+- Postal address verification  
+- Name, surname, and gender detection  
 
-In order to start open an account a https://dashboard.verificaremails.com select your desired language, all messages of the API will use your account language.
+When creating your account, select your preferred language. All API messages will use this language setting.
 
-[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/Dashboard_paso_1.png)(https://github.com/apousb/verificaremails-n8n-community-node](https://dashboard.verificaremails.com/app/public/register)
+[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/Dashboard_paso_1.png)](https://dashboard.verificaremails.com/app/public/register)
 
-After activating the account, you have to chosse the service you would like to use. You can navigate among services using the banners or the top left logo that display a drop down with all services.
+After activating your account, choose the service you want to use. You can navigate between services using the top-left logo or the banners.
 
-[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/Dashboard_paso_2.png)
+[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/Dashboard_paso_2.png)](https://dashboard.verificaremails.com/)
 
-Choose the service you would like to use and go to the API.
+Next, go to the API section of the chosen service.
 
-[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/Dashboard_paso_3.png)
+[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/Dashboard_paso_3.png)](https://dashboard.verificaremails.com/)
 
-On the API are, just select the top right button to "+ create new API". You will have to provide a name for the API, it is also a good idea to limit the amount of credts you will be able to use on it.
+Click on the **"+ Create new API"** button (top right). Give the API a name and optionally set a credit limit.
 
-[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/Dashboard_paso_4_1.png)
+[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/Dashboard_paso_4_1.png)](https://dashboard.verificaremails.com/)
 
-When you save the it will generate a token for use in the API credential node. 
+Once saved, an API token will be generated. This token must be added to the n8n credentials for the VerificarEmails node.
 
-What we need to do now is adding the node to N8N workflow. Fo rthat porpise we are going to use a public community node, on the main screen sear for a node called "verificaremails". Also the node is deployed as a community node, you have to search for it at "settings/community nodes".
+---
 
-You will have to add the API for the service you would like to use.
+## Using the Node in n8n
 
-[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/n8n_paso_1.png)
+In n8n, search for **VerificarEmails** in the Community Nodes section and add it to your workflow.
 
-If you woudl like to use more than one validation service is a good idea use the same API key in all Verificaremails API. You change the token to use a common one by selectin the "gear icon", onece you select you will see the currect token . Use tha same token for all teh services.
+[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/n8n_paso_1.png)](https://dashboard.verificaremails.com/)
 
-[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/n8n_paso_2.png)
+If you plan to use multiple validation services, it’s recommended to use the same API key for all of them.  
+To do this, open the **gear icon** in the credentials, select the active token, and reuse it across services.
 
-Whe you open the node, you have to choose the service you would like to use (email verification, phone verifcation, name/surname...)
+[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/n8n_paso_2.png)](https://dashboard.verificaremails.com/)
 
-[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/n8n_paso_3.png)
+When configuring the node, select the specific service you want to use (Email, Phone, Name/Surname, Postal address, etc.).
 
-In additin to verificatin service we provide much more information regarding the validated data,. Use our documentation on the "result guide" section to better undersand how to use those results.
+[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/n8n_paso_3.png)](https://dashboard.verificaremails.com/)
 
-[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/n8n_paso_4.png)
+Each service not only validates the data but also provides additional details. Check the **Result Guide** section in our documentation to better understand and use the results.
 
-Also teh service use error handling to detect wrong queries. errors are very stange but it is a good practice to implement some king of control. Teh explanation of the error ise the same language set to the user account.
+[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/n8n_paso_4.png)](https://dashboard.verificaremails.com/)
 
-[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/n8n_paso_4.png)
+The API also includes error handling for incorrect queries. Errors are rare, but we recommend implementing controls.  
+Error messages will always be returned in the account’s selected language.
 
-You can find detailed information about our API and how to understand resulta at:
-Email Verification API: https://www.verificaremails.com/docs/en/
-Phone Veriffication API: https://www.verificaremails.com/docs/en/index_telefonos.html
-Name/Surname and Gender API: https://www.verificaremails.com/docs/en/index_nombres.html
-Postal Address API: https://www.verificaremails.com/docs/en/index_direcciones.html
-If you want a quick stating guide go to our Swagger file: https://dashboard.verificaremails.com/documentation/index.html?v=8
+---
 
-If you need help setting up the verification enviroment you can use the chat on the right bottom widget.
+## Documentation
 
+- [Email Verification API](https://www.verificaremails.com/docs/en/)  
+- [Phone Verification API](https://www.verificaremails.com/docs/en/index_telefonos.html)  
+- [Name / Surname / Gender API](https://www.verificaremails.com/docs/en/index_nombres.html)  
+- [Postal Address API](https://www.verificaremails.com/docs/en/index_direcciones.html)  
+- [Swagger Quick Start Guide](https://dashboard.verificaremails.com/documentation/index.html?v=8)  
 
+If you need assistance setting up your environment, use the support chat (bottom right widget) on our dashboard.
+
+---
 
 ## License
 

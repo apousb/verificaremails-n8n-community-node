@@ -55,17 +55,11 @@ Choose the service you would like to use and go to the API.
 
 On the API are, just select the top right button to "+ create new API". You will have to provide a name for the API, it is also a good idea to limit the amount of credts you will be able to use on it.
 
-[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/Dashboard_paso_4.png)
+[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/Dashboard_paso_4_1.png)
 
 When you save the it will generate a token for use in the API credential node. 
 
-[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/Dashboard_paso_4.png)
-
-What we need to do now is adding the node to N8N workflow. Fo rthat porpise we are going to use a public community node, on the main screen sear for a node called "verificaremails"
-
-[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/n8n_paso_1.png)
-
-also the node is deployed as a community node, you have to search for it at "settings/community nodes".
+What we need to do now is adding the node to N8N workflow. Fo rthat porpise we are going to use a public community node, on the main screen sear for a node called "verificaremails". Also the node is deployed as a community node, you have to search for it at "settings/community nodes".
 
 You will have to add the API for the service you would like to use.
 

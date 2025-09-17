@@ -1,14 +1,14 @@
 {
   "name": "@verificaremails/n8n-nodes-verificaremails",
   "version": "1.0.1",
-  "description": "VerificarEmails.com node for n8n (email, phone, name and address validation)",
+  "description": "Official n8n community node for VerificarEmails.com",
   "author": {
     "name": "Antxon Pous",
     "email": "antxon.pous@verificaremails.com",
     "url": "https://www.verificaremails.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/apousb/verificaremails-n8n-community-node",
+  "homepage": "https://www.verificaremails.com/",
   "repository": {
     "type": "git",
     "url": "https://github.com/apousb/verificaremails-n8n-community-node.git"
@@ -16,23 +16,25 @@
   "bugs": {
     "url": "https://github.com/apousb/verificaremails-n8n-community-node/issues"
   },
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rimraf dist",
     "build": "tsc -p tsconfig.json",
     "postbuild": "mkdir -p dist/nodes/Verificaremails && (cp -f assets/verificaremails.svg dist/nodes/Verificaremails/verificaremails.svg ||  cp -f verificaremails.svg dist/nodes/Verificaremails/verificaremails.svg || true) && (cp -f assets/verificaremails.svg dist/verificaremails.svg ||  cp -f verificaremails.svg dist/verificaremails.svg || true)",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
+    "address",
+    "email",
     "n8n",
     "n8n-community-node",
-    "verificaremails",
-    "email",
+    "n8n-community-node-package",
+    "name",
     "phone",
     "validation",
-    "address",
-    "name"
+    "verificaremails"
   ],
   "devDependencies": {
     "rimraf": "^6.0.1",
@@ -55,10 +57,11 @@
     "node": ">=18"
   },
   "files": [
-    "dist/**",
+    "CHANGELOG.md",
     "LICENSE",
     "README.md",
-    "CHANGELOG.md",
+    "dist",
+    "dist/**",
     "package.json"
   ],
   "publishConfig": {

@@ -76,7 +76,7 @@
     ],
     "nodes": [
       {
-        "file": "dist/Verificaremails.node.js"
+        "file": "dist/nodes/Verificaremails/Verificaremails.node.js"
       }
     ]
   },

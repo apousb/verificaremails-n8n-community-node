@@ -1,20 +1,22 @@
 {
   "compilerOptions": {
     "target": "ES2019",
-    "module": "commonjs",
+    "module": "CommonJS",
     "declaration": true,
     "outDir": "dist",
+    "rootDir": "src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "rootDir": "."
+    "moduleResolution": "Node"
   },
   "include": [
-    "**/*.ts",
-    "src/index.ts",
-    "Verificaremails.node.ts",
-    "GenericFunctions.ts",
+    "src/**/*.ts",
     "credentials/**/*.ts",
     "nodes/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
   ]
 }

@@ -11,9 +11,7 @@
     "moduleResolution": "Node"
   },
   "include": [
-    "src/**/*.ts",
-    "credentials/**/*.ts",
-    "nodes/**/*.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
     "node_modules",

@@ -1,4 +1,4 @@
-import { verificaremailsApiRequest, VerificarService } from './GenericFunctions';
+import { verificaremailsApiRequest, VerificarService } from '../../GenericFunctions';
 
 export class Verificaremails {
   description = {

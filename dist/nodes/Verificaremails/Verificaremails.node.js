@@ -7,7 +7,7 @@ class Verificaremails {
         this.description = {
             displayName: 'VerificarEmails',
             name: 'verificaremails',
-            icon: 'file:nodes/Verificaremails/verificaremails.svg',
+            icon: 'file:verificaremails.svg',
             group: ['transform'],
             version: 1,
             description: 'Validate emails, phones, names and postal addresses using VerificarEmails.com API',

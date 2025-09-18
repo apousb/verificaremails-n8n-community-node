@@ -1,6 +1,6 @@
 {
   "name": "@verificaremails/n8n-nodes-verificaremails",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Official n8n community node for VerificarEmails.com",
   "author": {
     "name": "Antxon Pous",
@@ -69,13 +69,13 @@
     "access": "public"
   },
   "n8n": {
-  "credentials": [
-    "dist/credentials/VerificaremailsApi.credentials.js"
-  ],
-  "nodes": [
-    "dist/nodes/Verificaremails/Verificaremails.node.js"
-  ]
-},
+    "credentials": [
+      "dist/credentials/VerificaremailsApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Verificaremails/Verificaremails.node.js"
+    ]
+  },
   "overrides": {
     "axios": "^1.12.0",
     "form-data": "^4.0.4"

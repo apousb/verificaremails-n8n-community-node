@@ -1,4 +1,13 @@
+// src/GenericFunctions.ts
+import type {
+  IExecuteFunctions,
+  ILoadOptionsFunctions,
+  IPollFunctions,
+  IHookFunctions,
+  IDataObject,
+} from 'n8n-workflow';
 import { NodeApiError } from 'n8n-workflow';
+
 export type VerificarService =
   | 'email'
   | 'phone_hlr'
@@ -9,8 +18,13 @@ export type VerificarService =
   | 'name_correction'
   | 'name_autocomplete';
 
+/**
+ * Versión con apiKey pasado como argumento (igual que ya usabas).
+ * Tipamos `this` para que TS entienda que estamos dentro de una ejecución de n8n.
+ */
 export async function verificaremailsApiRequest(
-  method: string,
+  this: IExecuteFunctions | ILoadOptionsFunctions | IPollFunctions | IHookFunctions,
+  method: 'GET' | 'POST',
   term: string | Record<string, any>,
   apiKey: string,
   service: VerificarService,
@@ -28,19 +42,29 @@ export async function verificaremailsApiRequest(
 
   const endpoint = endpointMap[service];
 
+  const url = `https://dashboard.verificaremails.com/myapi/${endpoint}`;
+  const qs: IDataObject = {
+    'auth-token': apiKey,
+    term: typeof term === 'string' ? term : JSON.stringify(term),
+  };
+
   const options = {
-    headers: { Accept: 'application/json' },
     method,
-    uri: `https://dashboard.verificaremails.com/myapi/${endpoint}?auth-token=${apiKey}&term=${encodeURIComponent(typeof term === 'string' ? term : JSON.stringify(term))}`,
+    qs,
+    uri: url,
     json: true,
+    headers: { Accept: 'application/json' },
   };
 
   try {
-    // @ts-ignore - n8n provides helpers at runtime
+    // @ts-ignore — helpers la provee n8n en runtime
     const response = await this.helpers.request(options);
     return response;
   } catch (error: any) {
-    // Standardized error surface for n8n UI
-    throw new NodeApiError(this.getNode(), error, { message: 'Verificaremails API request failed' });
+    // Propaga un error estandarizado para que n8n muestre detalle en la UI
+    throw new NodeApiError(this.getNode(), error, {
+      message: error?.response?.body?.message ?? 'Verificaremails API request failed',
+      description: error?.response?.body?.error ?? error?.message,
+    });
   }
 }

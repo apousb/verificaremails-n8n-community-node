@@ -69,12 +69,8 @@
     "access": "public"
   },
 "n8n": {
-  "nodes": [
-    "dist/nodes/Verificaremails/Verificaremails.node.js"
-  ],
-  "credentials": [
-    "dist/credentials/VerificaremailsApi.credentials.js"
-  ]
+  "nodes": ["dist/nodes/Verificaremails/Verificaremails.node.js"],
+  "credentials": ["dist/credentials/VerificaremailsApi.credentials.js"]
 },
   "overrides": {
     "axios": "^1.12.0",

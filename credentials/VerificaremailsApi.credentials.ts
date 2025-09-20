@@ -8,8 +8,7 @@ import type {
 export class VerificaremailsApi implements ICredentialType {
   name = 'verificaremailsApi';
   displayName = 'Verificaremails API';
-  // Si quieres icono, ver nota al final. Lo quitamos para máxima compatibilidad.
-  // icon?: Icon;
+  // icon: quitado para evitar incompatibilidades de tipos; no es obligatorio
   documentationUrl = 'https://www.verificaremails.com/docs/';
 
   properties: INodeProperties[] = [
@@ -30,20 +29,20 @@ export class VerificaremailsApi implements ICredentialType {
     },
   ];
 
-  // Inyecta el token en la query y la cabecera accept
+  // Inyecta el token en query y la cabecera accept
   authenticate: IAuthenticateGeneric = {
     type: 'generic',
     properties: {
       qs: {
         'auth-token': '={{$credentials.apiKey}}',
       },
-      header: {
+      headers: {
         accept: 'application/json',
       },
     },
   };
 
-  // Test ligero (GET por defecto): debe responder 2xx o JSON de error => valida conectividad
+  // Test ligero (GET por defecto). Con token inválido vuestra API devuelve JSON de error, lo cual valida conectividad.
   test: ICredentialTestRequest = {
     request: {
       baseURL: '={{$credentials.baseUrl}}',

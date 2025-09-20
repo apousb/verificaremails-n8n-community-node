@@ -20,10 +20,11 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && npm run copy:assets",
     "postbuild": "mkdir -p dist/nodes/Verificaremails && (cp -f assets/verificaremails.svg dist/nodes/Verificaremails/verificaremails.svg ||  cp -f verificaremails.svg dist/nodes/Verificaremails/verificaremails.svg || true) && (cp -f assets/verificaremails.svg dist/verificaremails.svg ||  cp -f verificaremails.svg dist/verificaremails.svg || true)",
     "prepare": "npm run build",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "copy:assets": "mkdir -p dist/nodes/Verificaremails && (cp -f nodes/Verificaremails/verificaremails.svg dist/nodes/Verificaremails/ 2>/dev/null || true) && (cp -f src/nodes/Verificaremails/verificaremails.svg dist/nodes/Verificaremails/ 2>/dev/null || true)"
   },
   "keywords": [
     "address",

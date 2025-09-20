@@ -4,14 +4,18 @@
     "module": "CommonJS",
     "declaration": true,
     "outDir": "dist",
-    "rootDir": "src",
+    "rootDir": ".",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
+    "resolveJsonModule": true
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "nodes/**/*.ts",
+    "credentials/**/*.ts",
+    "index.ts"
   ],
   "exclude": [
     "node_modules",

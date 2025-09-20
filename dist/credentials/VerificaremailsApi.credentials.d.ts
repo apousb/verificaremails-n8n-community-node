@@ -9,4 +9,19 @@ export declare class VerificaremailsApi {
         type: string;
         default: string;
     }[];
+    authenticate: {
+        type: "generic";
+        properties: {
+            headers: {
+                Authorization: string;
+            };
+        };
+    };
+    test: {
+        request: {
+            baseURL: string;
+            url: string;
+            method: string;
+        };
+    };
 }

@@ -8,7 +8,7 @@ export class VerificaremailsApi /* implements ICredentialType */ {
   documentationUrl = 'https://www.verificaremails.com/docs/';
 
   properties /* : INodeProperties[] */ = [
-    { displayName: 'API Key', name: 'apiKey', type: 'string', default: '' },
+    { displayName: 'API Key', name: 'apiKey', type: 'string', default: '', typeOptions: { password: true } },
   ];
 
   authenticate = {

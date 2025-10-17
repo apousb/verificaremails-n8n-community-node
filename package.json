@@ -1,5 +1,5 @@
 {
-  "name": "@verificaremails/n8n-nodes-verificaremails",
+  "name": "n8n-nodes-verificaremails",
   "version": "1.0.12",
   "description": "Official n8n community node for VerificarEmails.com",
   "author": {
@@ -22,8 +22,6 @@
     "clean": "rimraf dist",
     "build": "tsc -p tsconfig.json && npm run copy:assets",
     "postbuild": "mkdir -p dist/nodes/Verificaremails && (cp -f assets/verificaremails.svg dist/nodes/Verificaremails/verificaremails.svg ||  cp -f verificaremails.svg dist/nodes/Verificaremails/verificaremails.svg || true) && (cp -f assets/verificaremails.svg dist/verificaremails.svg ||  cp -f verificaremails.svg dist/verificaremails.svg || true)",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run build",
     "copy:assets": "mkdir -p dist/nodes/Verificaremails && (cp -f nodes/Verificaremails/verificaremails.svg dist/nodes/Verificaremails/ 2>/dev/null || true) && (cp -f src/nodes/Verificaremails/verificaremails.svg dist/nodes/Verificaremails/ 2>/dev/null || true)"
   },
   "keywords": [
@@ -77,8 +75,5 @@
       "dist/credentials/VerificaremailsApi.credentials.js"
     ]
   },
-  "overrides": {
-    "axios": "^1.12.0",
-    "form-data": "^4.0.4"
-  }
+  "dependencies": {}
 }

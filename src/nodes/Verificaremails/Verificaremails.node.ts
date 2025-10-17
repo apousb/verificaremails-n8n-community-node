@@ -323,10 +323,14 @@ export class Verificaremails {
     const items = this.getInputData();
     const out: any[] = [];
 
+    const continueOnFail = this.continueOnFail();
+
     const credentials = await this.getCredentials('verificaremailsApi');
     const apiKey = credentials.apiKey as string;
 
     for (let i = 0; i < items.length; i++) {
+      try {
+			try {
       const service = this.getNodeParameter('service', i) as VerificarService;
 
       let term: any = '';
@@ -382,14 +386,20 @@ export class Verificaremails {
             ? response.status
             : 'unknown';
 
-      out.push({
-        json: {
+      out.push({ json: {
           service,
           term,
           status,
           apiResponse: response,
         },
-      });
+      }, pairedItem: { item: i } });
+      } catch (error) {
+        if (continueOnFail) {
+          out.push({ json: { error: this.getErrorMessage ? this.getErrorMessage(error) : (error.message || String(error)) }, pairedItem: { item: i } });
+          continue;
+        }
+        throw error;
+      }
     }
 
     return [out];

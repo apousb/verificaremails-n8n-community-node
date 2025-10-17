@@ -58,7 +58,7 @@ export async function verificaremailsApiRequest(
 
   try {
     // @ts-ignore — helpers la provee n8n en runtime
-    const response = await this.helpers.request(options);
+    const response = await this.helpers.httpRequest(options);
     return response;
   } catch (error: any) {
     // Propaga un error estandarizado para que n8n muestre detalle en la UI

@@ -386,13 +386,12 @@ export class Verificaremails {
             ? response.status
             : 'unknown';
 
-      out.push({ json: {
+      out.push({ json: { 
           service,
           term,
           status,
           apiResponse: response,
-        },
-      }, pairedItem: { item: i } });
+         }, pairedItem: { item: i } });
       } catch (error) {
         if (continueOnFail) {
           out.push({ json: { error: this.getErrorMessage ? this.getErrorMessage(error) : (error.message || String(error)) }, pairedItem: { item: i } });

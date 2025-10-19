@@ -26,16 +26,15 @@ export class VerificaremailsApi implements ICredentialType {
 		},
 	};
 
-	// ✅ Test: éxito si responde 200
-	test = {
+	// Test OK si responde HTTP 200
+	test: ICredentialTestRequest = {
 		request: {
 			baseURL: 'https://dashboard.verificaremails.com',
 			url: '/myapi/all/credits',
-			method: 'GET',
+			// method: 'GET' as IHttpRequestMethods, // <-- opcional, GET por defecto
 			qs: {
 				'auth-token': '={{$credentials.apiKey}}',
 			},
-			// timeout: 8000, // (opcional)
 		},
 	};
 }

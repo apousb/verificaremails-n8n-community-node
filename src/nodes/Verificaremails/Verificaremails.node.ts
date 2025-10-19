@@ -5,6 +5,7 @@ import type {
 	INodeTypeDescription,
 	IDataObject,
 } from 'n8n-workflow';
+import { NodeConnectionType } from 'n8n-workflow'; 
 
 import { verificaremailsApiRequest } from '../../GenericFunctions';
 
@@ -29,8 +30,8 @@ export class Verificaremails implements INodeType {
 		defaults: {
 			name: 'VerificarEmails',
 		},
-		inputs: ['main'],
-		outputs: ['main'],
+		inputs: [NodeConnectionType.Main],  
+		outputs: [NodeConnectionType.Main], 
 		credentials: [
 			{
 				name: 'verificaremailsApi',

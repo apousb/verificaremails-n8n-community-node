@@ -4,8 +4,7 @@ exports.VerificaremailsApi = void 0;
 class VerificaremailsApi {
     constructor() {
         this.name = 'verificaremailsApi';
-        this.displayName = 'Verificaremails API';
-        // icon: quitado para evitar incompatibilidades de tipos; no es obligatorio
+        this.displayName = 'VerificarEmails.com API';
         this.documentationUrl = 'https://www.verificaremails.com/docs/';
         this.properties = [
             {
@@ -14,33 +13,27 @@ class VerificaremailsApi {
                 type: 'string',
                 typeOptions: { password: true },
                 default: '',
-                description: 'Token que se pasa como query param <code>auth-token</code>.',
-            },
-            {
-                displayName: 'Base URL',
-                name: 'baseUrl',
-                type: 'string',
-                default: 'https://dashboard.verificaremails.com',
-                description: 'Cámbialo solo si usas un dominio distinto.',
+                description: 'Your VerificarEmails API key',
             },
         ];
-        // Inyecta el token en query y la cabecera accept
+        // Añade ?auth-token=<API_KEY> a todas las requests
         this.authenticate = {
             type: 'generic',
             properties: {
                 qs: {
                     'auth-token': '={{$credentials.apiKey}}',
                 },
-                headers: {
-                    accept: 'application/json',
-                },
             },
         };
-        // Test ligero (GET por defecto). Con token inválido vuestra API devuelve JSON de error, lo cual valida conectividad.
+        // Test OK si responde HTTP 200
         this.test = {
             request: {
-                baseURL: '={{$credentials.baseUrl}}',
-                url: '/myapi/email/validate/single?term=test%40example.com',
+                baseURL: 'https://dashboard.verificaremails.com',
+                url: '/myapi/all/credits',
+                // method: 'GET' as IHttpRequestMethods, // <-- opcional, GET por defecto
+                qs: {
+                    'auth-token': '={{$credentials.apiKey}}',
+                },
             },
         };
     }

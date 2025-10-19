@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-verificaremails",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Official n8n community node for VerificarEmails.com",
   "author": {
     "name": "Antxon Pous",

@@ -3,21 +3,29 @@
 Official n8n node for [VerificarEmails.com](https://www.verificaremails.com/en/).  
 Validate **emails**, **phone numbers** (HLR / MNP / Syntax), **names**, and **postal addresses**.
 
----
+### 🔍 **Finding an Official n8n Community Node**
 
-## 🔍 Finding an Official n8n Community Node
-
-Because VerificarEmails is now an official community node, you don’t need to install it manually anymore.
+Because **VerificarEmails** is now an **official community node**, you **don’t need to install it manually** anymore.
 
 You can simply:
 
-Open n8n in your browser.
+1. Open **n8n** in your browser.
+2. In the workflow editor, click the **“+”** button to add a new node.
+3. Use the **search bar** and type:
 
-In the workflow editor, click the “+” button to add a new node.
+   ```
+   VerificarEmails
+   ```
+4. The node will appear automatically in the list — no need to install it from *Settings → Community Nodes*.
+5. Click on it to add it directly to your workflow.
 
-Use the search bar and type:
+---
 
-## Install a Community Node from the n8n UI**
+✅ **Official community nodes** are automatically available in the n8n node search — just like built-in nodes.
+You’ll always get the **latest verified version** without manual updates or npm installation.
+
+
+## Install manually a Community Node from the n8n UI**
 
 1. **Open n8n** in your browser.
    Example: `https://your-n8n-domain.com` or `http://localhost:5678`

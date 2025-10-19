@@ -95,51 +95,7 @@ npm install
 npm run build
 ```
 
-### 🧩 **Install a Community Node from the n8n UI**
 
-1. **Open n8n** in your browser.
-   Example: `https://your-n8n-domain.com` or `http://localhost:5678`
-
-2. In the **left sidebar**, click **⚙️ Settings → Community Nodes**.
-
-3. Click the **“Install a Community Node”** button.
-
-4. Enter the **package name** from npm — for example:
-
-   ```
-   n8n-nodes-verificaremails
-   ```
-
-5. Click **Install** and wait a few seconds.
-   n8n will download and install the package automatically.
-
-6. You’ll see a confirmation message, and the node will appear in your **Nodes panel** (search by name).
-
-7. **Restart n8n** if prompted — this activates the new node.
-
----
-
-### 🔄 **Update an Existing Community Node**
-
-1. Go again to **⚙️ Settings → Community Nodes**.
-
-2. Find the package you want to update (for example, `n8n-nodes-verificaremails`).
-
-3. If a new version is available, you’ll see an **“Update”** button next to it.
-
-4. Click **Update**, confirm, and wait for installation to finish.
-
-5. **Restart n8n** when prompted.
-
----
-
-✅ After restart, the latest version of the node is active, and your existing workflows will keep working.
-You can check the version number under **Settings → Community Nodes → Installed packages**.
-
-
-
-
----
 
 ## Credentials
 

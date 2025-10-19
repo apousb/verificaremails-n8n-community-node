@@ -1,9 +1,30 @@
-import type { IAuthenticateGeneric, ICredentialTestRequest, ICredentialType, INodeProperties } from 'n8n-workflow';
-export declare class VerificaremailsApi implements ICredentialType {
+export declare class VerificaremailsApi {
     name: string;
     displayName: string;
+    icon: string;
     documentationUrl: string;
-    properties: INodeProperties[];
-    authenticate: IAuthenticateGeneric;
-    test: ICredentialTestRequest;
+    properties: {
+        displayName: string;
+        name: string;
+        type: string;
+        default: string;
+        typeOptions: {
+            password: boolean;
+        };
+    }[];
+    authenticate: {
+        type: "generic";
+        properties: {
+            headers: {
+                Authorization: string;
+            };
+        };
+    };
+    test: {
+        request: {
+            baseURL: string;
+            url: string;
+            method: string;
+        };
+    };
 }

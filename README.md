@@ -19,6 +19,8 @@ You can simply:
 4. The node will appear automatically in the list — no need to install it from *Settings → Community Nodes*.
 5. Click on it to add it directly to your workflow.
 
+[![Dashboard Verificaremails](https://www.verificaremails.com/docs/assets/n8n_paso_1.png)](https://dashboard.verificaremails.com/)
+
 ---
 
 ✅ **Official community nodes** are automatically available in the n8n node search — just like built-in nodes.

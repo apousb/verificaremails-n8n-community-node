@@ -5,7 +5,7 @@ Validate **emails**, **phone numbers** (HLR / MNP / Syntax), **names**, and **po
 
 ### 🔍 **Finding an Official n8n Community Node**
 
-Because **VerificarEmails** is now an **official community node**, you **don’t need to install it manually** anymore.
+Because **Verificaremails** is now an **official community node**, you **don’t need to install it manually** anymore.
 
 You can simply:
 

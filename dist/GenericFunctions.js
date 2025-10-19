@@ -10,7 +10,7 @@ async function verificaremailsApiRequest(method, term, apiKey, service) {
     var _a, _b, _c, _d, _e, _f;
     const endpointMap = {
         email: 'email/validate/single',
-        phone_hlr: 'phone/validate/single',
+        phone_hlr: 'phone/validate/single', // ← tu caso de prueba: OK
         name: 'name/validate/single',
         address: 'address/validate/single',
         phone_mnp: 'phonemnp/validate/single',
@@ -20,14 +20,15 @@ async function verificaremailsApiRequest(method, term, apiKey, service) {
     };
     const endpoint = endpointMap[service];
     const url = `https://dashboard.verificaremails.com/myapi/${endpoint}`;
+    // Para tu API, 'auth-token' va en querystring y el valor a validar en 'term'
     const qs = {
         'auth-token': apiKey,
         term: typeof term === 'string' ? term : JSON.stringify(term),
     };
     const options = {
         method,
+        url, // ← IMPORTANTE: usar `url`, no `uri`
         qs,
-        uri: url,
         json: true,
         headers: { Accept: 'application/json' },
     };
